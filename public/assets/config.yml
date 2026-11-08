@@ -1,0 +1,75 @@
+title: "misantropic"
+subtitle: "small tools, built by hand"
+icon: "fas fa-mask"
+footer: '<p>developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
+connectivityCheck: false
+columns: "3"
+
+defaults:
+  layout: columns
+  colorTheme: auto
+
+theme: default
+
+colors:
+  light:
+    highlight-primary: "#5e81ac"
+    highlight-secondary: "#81a1c1"
+    highlight-hover: "#88c0d0"
+    background: "#eceff4"
+    card-background: "#e5e9f0"
+    text: "#2e3440"
+    text-header: "#2e3440"
+    text-title: "#2e3440"
+    text-subtitle: "#4c566a"
+    card-shadow: rgba(46, 52, 64, 0.1)
+    link: "#5e81ac"
+    link-hover: "#2e3440"
+  dark:
+    highlight-primary: "#5e81ac"
+    highlight-secondary: "#81a1c1"
+    highlight-hover: "#88c0d0"
+    background: "#2e3440"
+    card-background: "#3b4252"
+    text: "#eceff4"
+    text-header: "#eceff4"
+    text-title: "#eceff4"
+    text-subtitle: "#d8dee9"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#88c0d0"
+    link-hover: "#ebcb8b"
+
+services:
+  - name: "Tools"
+    icon: "fas fa-lock"
+    items:
+      - name: "binthere"
+        subtitle: "Zero-knowledge pastebin"
+        icon: "fas fa-paste"
+        url: "https://paste.misantropic.net"
+      - name: "Seal"
+        subtitle: "Offline file encryption in your browser"
+        icon: "fas fa-file-shield"
+        url: "https://seal.misantropic.net"
+      - name: "Mail"
+        subtitle: "Fast, focused email client"
+        icon: "fas fa-envelope"
+        url: "https://mail.misantropic.net"
+  - name: "Chat"
+    icon: "fas fa-comments"
+    items:
+      - name: "Element"
+        subtitle: "Matrix client for the web"
+        icon: "fas fa-comment-dots"
+        url: "https://chat.misantropic.net"
+      - name: "Sable"
+        subtitle: "An almost stable Matrix client"
+        icon: "fas fa-comment"
+        url: "https://sable.misantropic.net"
+  - name: "Play"
+    icon: "fas fa-gamepad"
+    items:
+      - name: "UNO"
+        subtitle: "Multiplayer with friends or bots"
+        icon: "fas fa-dice"
+        url: "https://uno.misantropic.net"
