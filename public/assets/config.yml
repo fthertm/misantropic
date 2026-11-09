@@ -1,4 +1,5 @@
 title: "misantropic"
+subtitle: "small tools, built by hand"
 icon: "fas fa-mask"
 footer: '<p>developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
 connectivityCheck: false
@@ -6,11 +7,24 @@ columns: "3"
 
 defaults:
   layout: columns
-  colorTheme: dark
+  colorTheme: auto
 
-theme: dark
+theme: default
 
 colors:
+  light:
+    highlight-primary: "#5e81ac"
+    highlight-secondary: "#81a1c1"
+    highlight-hover: "#88c0d0"
+    background: "#eceff4"
+    card-background: "#e5e9f0"
+    text: "#2e3440"
+    text-header: "#2e3440"
+    text-title: "#2e3440"
+    text-subtitle: "#4c566a"
+    card-shadow: rgba(46, 52, 64, 0.1)
+    link: "#5e81ac"
+    link-hover: "#2e3440"
   dark:
     highlight-primary: "#5e81ac"
     highlight-secondary: "#81a1c1"
