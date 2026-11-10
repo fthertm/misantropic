@@ -55,7 +55,7 @@ services:
       - name: "Mail"
         subtitle: "Fast, focused email client"
         icon: "fas fa-envelope"
-        url: "https://mail.misantropic.net"
+        url: "https://mail.fatihertem.com"
   - name: "Chat"
     icon: "fas fa-comments"
     items:
