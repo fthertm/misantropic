@@ -1,7 +1,8 @@
 title: "misantropic"
+documentTitle: "misantropic"
 subtitle: "small tools, built by hand"
 icon: "fas fa-mask"
-footer: '<p>developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
+footer: '<p>Developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
 connectivityCheck: false
 columns: "3"
 
