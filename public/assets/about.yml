@@ -1,5 +1,4 @@
 subtitle: "fewer letters, fewer people."
-columns: "3"
 
 links:
   - name: "Home"
@@ -15,27 +14,6 @@ message:
   content: >-
     <p><strong>misantropic</strong> <em>/mi.sæn.ˈtrɒp.ɪk/</em> adj. like misanthropic,
     with fewer h's and no regrets.</p>
-    <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and for friends.</p>
-    <p>Everything here is privacy-minded and built by hand. I host a private Matrix instance on
-    <code>misantropic.net</code> using <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>.
-    Registration is invite-only—if you'd like an account, just message <code>@fatih:misantropic.net</code>.</p>
-    <p>Matrix is the best way to reach me. Email works too
-    (<code>skynet [at] misantropic.net</code>), but I'd rather you didn't.</p>
-
-services:
-  - name: "Elsewhere"
-    icon: "fas fa-earth-europe"
-    items:
-      - name: "Portfolio"
-        subtitle: "fatihertem.com"
-        icon: "fas fa-briefcase"
-        url: "https://fatihertem.com"
-        target: "_blank"
-      - name: "Say hi on Matrix"
-        subtitle: "@fatih:misantropic.net"
-        icon: "fas fa-hand"
-        url: "https://matrix.to"
-      - name: "Email"
-        subtitle: "skynet [at] misantropic.net"
-        icon: "fas fa-envelope"
-        url: "#about"
+    <p>This is my small corner of the internet: a handful of privacy-minded, self-hosted tools I build and maintain by hand for myself and close friends. You can also check out my other work on my <a href="https://fatihertem.com" target="_blank" rel="noopener">portfolio</a>.</p>
+    <p>The Matrix homeserver runs on <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> under <code>misantropic.net</code>. Registration is invite-only—if you'd like an account, just message <code>@fatih:misantropic.net</code>.</p>
+    <p>Matrix is the best way to reach me. Email works too (<code>skynet [at] misantropic.net</code>), but I'd rather you didn't.</p>
