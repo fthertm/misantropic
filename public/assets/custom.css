@@ -1,33 +1,32 @@
-/* remove user-facing toggles: theme, layout, search */
+/* navbar */
 body #app #bighead .navbar-end { display: none !important; }
-
-/* simple navbar on the left */
 body #app #bighead .navbar-start { margin-right: auto; }
 
-/* about page text */
-body #app .message .message-body p + p { margin-top: .75rem; }
-body #app .message .message-body code {
-  background: rgba(0, 0, 0, .25);
-  color: var(--text);
-}
-
-/* About kutusunu kartlarla uyumlu hale getir ve modernleştir */
+/* about message box */
 body #app .message {
   background: var(--card-background);
   border: 1px solid rgba(136, 192, 208, 0.15);
-  border-left: 4px solid #88c0d0; /* Nord vurgu rengi */
+  border-left: 4px solid #88c0d0;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body #app .message .message-header {
+  border-radius: 8px 12px 0 0;
+  padding: 0.85rem 1.75rem;
 }
 
 body #app .message .message-body {
   border: none;
   padding: 1.5rem 1.75rem;
   line-height: 1.65;
-  max-width: 82ch; /* Uzun satırların göz yormasını önler */
+  max-width: 82ch;
 }
 
-/* İlk satırdaki sözlük tanımını başlık gibi öne çıkar */
+body #app .message .message-body p + p {
+  margin-top: 0.75rem;
+}
+
 body #app .message .message-body p:first-child {
   font-size: 1.1rem;
   color: #eceff4;
@@ -36,7 +35,15 @@ body #app .message .message-body p:first-child {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Linklere yumuşak alt çizgi ve Nord vurgusu ekle */
+body #app .message .message-body code {
+  background: rgba(136, 192, 208, 0.12);
+  color: #88c0d0;
+  border: 1px solid rgba(136, 192, 208, 0.25);
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-size: 0.9em;
+}
+
 body #app .message .message-body a {
   color: #88c0d0 !important;
   text-decoration: none;
@@ -49,11 +56,12 @@ body #app .message .message-body a:hover {
   border-bottom-style: solid;
 }
 
-/* Kartlara da aynı kenarlık ve yumuşak geçişi ekle */
+/* cards & tinted icons */
 body #app .card {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   transition: transform 0.2s ease, border-color 0.2s ease;
+  height: 100%;
 }
 
 body #app .card:hover {
@@ -61,8 +69,6 @@ body #app .card:hover {
   border-color: rgba(136, 192, 208, 0.3);
 }
 
-
-/* service icons: tinted tile, accent color per category */
 body #app .card .media-left {
   --accent: #88c0d0;
   width: 46px;
@@ -75,6 +81,7 @@ body #app .card .media-left {
   border-radius: 12px;
   background: color-mix(in srgb, var(--accent) 16%, transparent);
 }
+
 body #app .card .media-left figure,
 body #app .card .media-left .image {
   width: 100%;
@@ -84,6 +91,7 @@ body #app .card .media-left .image {
   align-items: center;
   justify-content: center;
 }
+
 body #app .card .media-left .fa-fw,
 body #app .card .media-left i {
   width: auto;
@@ -95,23 +103,47 @@ body #app .card .media-left i {
   text-align: center;
   color: var(--accent);
 }
-body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
-body #app .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
-body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
 
-/* footer: readable contrast */
+/* 3-column grid & accent palette */
+body #app .column .columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+body #app .column .columns > .column {
+  width: 100% !important;
+  padding: 0;
+}
+
+body #app .columns > .column:nth-child(1) .card .media-left,
+body #app .column .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
+
+body #app .columns > .column:nth-child(2) .card .media-left,
+body #app .column .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
+
+body #app .columns > .column:nth-child(3) .card .media-left,
+body #app .column .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
+
+@media (max-width: 768px) {
+  body #app .column .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* footer */
 body #app .footer,
 body #app .footer p {
   color: var(--text-subtitle) !important;
   opacity: 1 !important;
 }
+
 body #app .footer a {
   color: var(--link) !important;
   font-weight: 600;
 }
 
-/* Sayfa geçişinde dinamik bileşenlerin erken gizlenmesini önle */
+/* prevent layout shift on load */
 body #app .column:nth-child(2) .card:first-child {
   min-height: 76px;
 }
-
