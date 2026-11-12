@@ -17,5 +17,3 @@ message:
     <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and friends. You can also check out my <a href="https://fatihertem.com" target="_blank" rel="noopener">portfolio</a>.</p>
     <p>Everything here is privacy-minded and built by hand. I host the <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> homeserver for <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message <code>@fatih:misantropic.net</code>.</p>
     <p>Matrix is the best way to reach me. Email works too (<code>skynet [at] misantropic.net</code>), but I'd rather you didn't.</p>
-
-services: []
