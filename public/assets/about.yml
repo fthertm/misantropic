@@ -20,7 +20,7 @@ message:
     <p>The Matrix instance runs on <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>
     at <code>misantropic.net</code>. Registration is invite-only.</p>
     <p>Reach me on Matrix at <code>@fatih:misantropic.net</code>. Email
-    (<span class="mail-obf" data-user="skynet" data-domain="misantropic.net"></span>) works too, though I'd rather you didn't.</p>
+    (<code >skynet [at] misantropic.net</code>) works too, though I'd rather you didn't.</p>
 
 services:
   - name: "Elsewhere"
