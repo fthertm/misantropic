@@ -11,7 +11,9 @@ body #app .message {
 
 body #app .message .message-header {
   border-radius: 12px 12px 0 0;
-  padding: 0.85rem 1.75rem;
+  padding: 0.95rem 1.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
 }
 
 body #app .message .message-body {
