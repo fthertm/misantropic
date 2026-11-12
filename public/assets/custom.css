@@ -146,3 +146,9 @@ body #app .footer a {
 body #app .column:nth-child(2) .card:first-child {
   min-height: 76px;
 }
+
+/* Hide services at about page */
+body:has(a[href="#about"].is-active) #app .columns,
+body:has(.message) #app .columns {
+  display: none !important;
+}
