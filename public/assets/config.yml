@@ -73,5 +73,5 @@ services:
     items:
       - name: "UNO"
         subtitle: "Multiplayer with friends or bots"
-        icon: "fas fa-dice"
+        icon: "fas fa-layer-group"
         url: "https://uno.misantropic.net"
