@@ -1,35 +1,30 @@
 title: "misantropic"
-documentTitle: "misantropic"
 subtitle: "small tools, built by hand"
 icon: "fas fa-mask"
-footer: '<p>Developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
+footer: '<p>developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
 connectivityCheck: false
 columns: "3"
+stylesheet: "assets/custom.css"
 
 defaults:
   layout: columns
-  colorTheme: auto
+  colorTheme: dark
 
 theme: default
 
+links:
+  - name: "Home"
+    icon: "fas fa-house"
+    url: "#"
+  - name: "About"
+    icon: "fas fa-circle-info"
+    url: "#about"
+
 colors:
-  light:
-    highlight-primary: "#5e81ac"
-    highlight-secondary: "#81a1c1"
-    highlight-hover: "#88c0d0"
-    background: "#eceff4"
-    card-background: "#e5e9f0"
-    text: "#2e3440"
-    text-header: "#2e3440"
-    text-title: "#2e3440"
-    text-subtitle: "#4c566a"
-    card-shadow: rgba(46, 52, 64, 0.1)
-    link: "#5e81ac"
-    link-hover: "#2e3440"
   dark:
     highlight-primary: "#5e81ac"
-    highlight-secondary: "#81a1c1"
-    highlight-hover: "#88c0d0"
+    highlight-secondary: "#4c6a8f"
+    highlight-hover: "#81a1c1"
     background: "#2e3440"
     card-background: "#3b4252"
     text: "#eceff4"
@@ -42,35 +37,41 @@ colors:
 
 services:
   - name: "Tools"
-    icon: "fas fa-lock"
+    icon: "fas fa-screwdriver-wrench"
     items:
       - name: "binthere"
         subtitle: "Zero-knowledge pastebin"
-        icon: "fas fa-paste"
+        icon: "fas fa-user-secret"
         url: "https://paste.misantropic.net"
       - name: "Seal"
         subtitle: "Offline file encryption in your browser"
-        icon: "fas fa-file-shield"
+        icon: "fas fa-vault"
         url: "https://seal.misantropic.net"
       - name: "Mail"
         subtitle: "Fast, focused email client"
-        icon: "fas fa-envelope"
-        url: "https://mail.fatihertem.com"
-  - name: "Chat"
-    icon: "fas fa-comments"
+        icon: "fas fa-paper-plane"
+        url: "https://mail.misantropic.net"
+
+  - name: "Matrix"
+    icon: "fab fa-matrix"
     items:
       - name: "Element"
-        subtitle: "Matrix client for the web"
-        icon: "fas fa-comment-dots"
+        subtitle: "The classic Matrix client"
+        icon: "fas fa-message"
         url: "https://chat.misantropic.net"
       - name: "Sable"
         subtitle: "An almost stable Matrix client"
-        icon: "fas fa-comment"
+        icon: "fas fa-feather"
         url: "https://sable.misantropic.net"
+      - name: "Get an account"
+        subtitle: "Sign-ups are closed. Message @fatih:misantropic.net"
+        icon: "fas fa-user-plus"
+        url: "https://chat.misantropic.net/#/user/@fatih:misantropic.net"
+
   - name: "Play"
     icon: "fas fa-gamepad"
     items:
       - name: "UNO"
         subtitle: "Multiplayer with friends or bots"
-        icon: "fas fa-dice"
+        icon: "fas fa-clone"
         url: "https://uno.misantropic.net"
