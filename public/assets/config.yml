@@ -60,7 +60,7 @@ services:
         endpoint: "https://matrix.misantropic.net"
         subtitle: "Invite only."
         icon: "fas fa-server"
-        url: "https://misantropic.net/#about"
+        url: "#about"
       - name: "Element"
         subtitle: "The classic Matrix client"
         icon: "fas fa-comments"
