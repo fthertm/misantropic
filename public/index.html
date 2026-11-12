@@ -2,6 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <script>
+      (function() {
+        const originalFetch = window.fetch;
+        const memoryCache = new Map();
+
+        window.fetch = async function(...args) {
+          const req = args[0];
+          const url = typeof req === 'string' ? req : (req && req.url);
+
+          // Matrix durum kontrolü ve YAML yapılandırma dosyalarını bellekte tut
+          if (url && (url.includes('/_matrix/federation/v1/version') || url.endsWith('.yml'))) {
+            const cached = memoryCache.get(url);
+            // 60 saniye boyunca ağa gitmeden RAM'den anında (0 ms) döndür
+            if (cached && (Date.now() - cached.time < 60000)) {
+              return cached.response.clone();
+            }
+            const response = await originalFetch.apply(this, args);
+            if (response.ok) {
+              memoryCache.set(url, { time: Date.now(), response: response.clone() });
+            }
+            return response;
+          }
+
+          return originalFetch.apply(this, args);
+        };
+      })();
+    </script>
     <link rel="icon" href="assets/icons/favicon.ico" />
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" sizes="180x180">
     <link rel="mask-icon" href="assets/icons/logo.svg">
@@ -10,7 +37,9 @@
     <script type="module" crossorigin src="./resources/index-C32yDzkE.js"></script>
     <link rel="stylesheet" crossorigin href="./resources/index-CyPCBeHl.css">
     <link rel="stylesheet" href="assets/custom.css">
-  <link rel="manifest" href="./assets/manifest.json" crossorigin="use-credentials"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
+    <link rel="manifest" href="./assets/manifest.json" crossorigin="use-credentials">
+    <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script>
+  </head>
   <body>
     <div id="app-mount"></div>
   </body>
