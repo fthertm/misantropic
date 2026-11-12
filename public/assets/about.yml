@@ -12,17 +12,15 @@ links:
 message:
   style: "is-dark"
   icon: "fas fa-circle-info"
-  title: "Hi, I'm Faith"
+  title: "Hi, I'm Fatih"
   content: >-
     <p><strong>misantropic</strong> <em>/mi.sæn.ˈtrɒp.ɪk/</em> adj. like misanthropic,
     with fewer h's and no regrets.</p>
-    <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and for friends.</p>
-    <p>Everything here is privacy-minded and built by hand. The Matrix homeserver is
-    <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>, serving the server name
-    <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message
-    <code>@fatih:misantropic.net</code> on Matrix.</p>
-    <p>Matrix is the best way to reach me. Email works too
-    (<span class="mail-obf" data-user="skynet" data-domain="misantropic.net"></span>), but I'd rather you didn't.</p>
+    <p>A quiet corner of the internet hosting hand-built, privacy-minded tools for myself and close friends.</p>
+    <p>The Matrix instance runs on <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>
+    at <code>misantropic.net</code>. Registration is invite-only.</p>
+    <p>Reach me on Matrix at <code>@fatih:misantropic.net</code>. Email
+    (<span class="mail-obf" data-user="skynet" data-domain="misantropic.net"></span>) works too, though I'd rather you didn't.</p>
 
 services:
   - name: "Elsewhere"
