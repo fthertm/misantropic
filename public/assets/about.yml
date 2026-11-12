@@ -22,7 +22,7 @@ message:
     <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message
     <code>@fatih:misantropic.net</code> on Matrix.</p>
     <p>Matrix is the best way to reach me. Email works too
-    (<a href="mailto:skynet@misantropic.net">skynet@misantropic.net</a>), but I'd rather you didn't.</p>
+    (<span class="mail-obf" data-user="skynet" data-domain="misantropic.net"></span>), but I'd rather you didn't.</p>
 
 services:
   - name: "Elsewhere"
@@ -38,6 +38,6 @@ services:
         icon: "fas fa-hand"
         url: "https://matrix.to/#/@fatih:misantropic.net"
       - name: "Email"
-        subtitle: "Matrix is preferred"
+        subtitle: "skynet [at] misantropic.net"
         icon: "fas fa-envelope"
-        url: "mailto:skynet@misantropic.net"
+        url: "#about"
