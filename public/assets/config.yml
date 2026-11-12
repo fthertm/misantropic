@@ -55,7 +55,7 @@ services:
   - name: "Matrix"
     icon: "fab fa-matrix"
     items:
-        - name: "Homeserver"
+      - name: "Homeserver"
         type: "Matrix"
         endpoint: "https://matrix.misantropic.net"
         subtitle: "Invite only."
