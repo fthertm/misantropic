@@ -64,6 +64,8 @@ services:
         icon: "fas fa-paw"
         url: "https://sable.misantropic.net"
       - name: "Get an account"
+        type: "Matrix"
+        endpoint: "https://matrix.misantropic.net"
         subtitle: "Invite only. Just ask."
         icon: "fas fa-user-plus"
         url: "https://matrix.to/#/@fatih:misantropic.net"
