@@ -12,12 +12,7 @@ message:
   style: "is-dark"
   title: "Hi, I'm faith"
   content: >-
-    <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> adj. misanthropic,
-    minus the h, no regrets.</p>
-    <p>I host a few things here for myself and friends. A pastebin, a file sealer, a mail
-    client, a Matrix homeserver. Also UNO, because someone has to. Nothing is public,
-    nothing phones home, nothing tracks you.</p>
-    <p>The homeserver runs <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>
-    and is invite only. Message <code>@fatih:misantropic.net</code> if you want in.</p>
-    <p>Matrix is the best way to reach me. Email works too (skynet [at] misantropic.net),
-    but I'd rather you didn't.</p>
+    <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> — <em>adj.</em> misanthropic, minus the "h", no regrets.</p>
+    <p>I self-host a quiet corner of the internet for myself and a few friends: a pastebin, a file sealer, webmail, a <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> Matrix homeserver, and UNO (because someone has to).</p>
+    <p><strong>Zero public access. Zero telemetry. Zero tracking.</strong></p>
+    <p>The Matrix server is invite-only. Ping <code>@fatih:misantropic.net</code> if you think you belong here. Email works too (<code>skynet [at] misantropic.net</code>), though I’d genuinely prefer you didn't.</p>
