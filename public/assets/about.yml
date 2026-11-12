@@ -3,14 +3,14 @@ subtitle: "fewer letters, fewer people."
 links:
   - name: "Home"
     icon: "fas fa-house"
-    url: "#"
+    url: "#top"
   - name: "About"
     icon: "fas fa-circle-info"
     url: "#about"
 
 message:
   style: "is-dark"
-  title: "Hi, I'm Faith"
+  title: "Hi, I'm faith"
   content: >-
     <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> adj. misanthropic,
     without h, and no regrets.</p>
