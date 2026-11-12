@@ -130,41 +130,6 @@ body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0;
 body #app .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
 body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
 
-/* full-width slim cards inside single group */
-body #app .columns > .column:only-child {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  width: 100%;
-  max-width: 100%;
-  flex: 1 1 100%;
-}
-
-body #app .columns > .column:only-child > h2 {
-  grid-column: 1 / -1;
-  margin-bottom: 0.25rem;
-}
-
-body #app .columns > .column:only-child .card-content {
-  padding: 0.75rem 1rem;
-}
-
-body #app .columns > .column:only-child .card .media-left {
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-}
-
-body #app .columns > .column:only-child .card .media-left i {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  body #app .columns > .column:only-child {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* footer */
 body #app .footer,
 body #app .footer p {
