@@ -1,4 +1,4 @@
-subtitle: "about this place"
+subtitle: "fewer letters, fewer people."
 
 links:
   - name: "Home"
@@ -13,9 +13,9 @@ message:
   icon: "fas fa-circle-info"
   title: "Hi, I'm Faith"
   content: >-
+    <p><strong>misantropic</strong> <em>/mi.sæn.ˈtrɒp.ɪk/</em> adj. like misanthropic,
+    with fewer h's and no regrets.</p>
     <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and for friends.</p>
-    <p>And yes, it's <em>misantropic</em>, not <em>misanthropic</em>. It started as a typo, I noticed too late,
-    and by then it had stuck. I'm calling it a feature.</p>
     <p>Everything here is privacy-minded and built by hand. The Matrix server runs on
     <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> under the server name
     <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message
