@@ -1,0 +1,36 @@
+subtitle: "about this place"
+
+links:
+  - name: "Home"
+    icon: "fas fa-house"
+    url: "#"
+  - name: "About"
+    icon: "fas fa-circle-info"
+    url: "#about"
+
+message:
+  style: "is-dark"
+  icon: "fas fa-circle-info"
+  title: "Hi, I'm Faith"
+  content: >-
+    <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and for friends.</p>
+    <p>And yes, it's <em>misantropic</em>, not <em>misanthropic</em>. It started as a typo, I noticed too late,
+    and by then it had stuck. I'm calling it a feature.</p>
+    <p>Everything here is privacy-minded and built by hand. The Matrix server runs on
+    <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> under the server name
+    <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message
+    <code>@fatih:misantropic.net</code> on Matrix.</p>
+
+services:
+  - name: "Elsewhere"
+    icon: "fas fa-earth-europe"
+    items:
+      - name: "Portfolio"
+        subtitle: "fatihertem.com"
+        icon: "fas fa-briefcase"
+        url: "https://fatihertem.com"
+        target: "_blank"
+      - name: "Say hi on Matrix"
+        subtitle: "@fatih:misantropic.net"
+        icon: "fas fa-hand"
+        url: "https://chat.misantropic.net/#/user/@fatih:misantropic.net"
