@@ -41,15 +41,15 @@ services:
     items:
       - name: "binthere"
         subtitle: "Zero-knowledge pastebin"
-        icon: "fas fa-user-secret"
+        icon: "fas fa-paste"
         url: "https://paste.misantropic.net"
       - name: "Seal"
         subtitle: "Offline file encryption in your browser"
-        icon: "fas fa-vault"
+        icon: "fas fa-lock"
         url: "https://seal.misantropic.net"
       - name: "Mail"
         subtitle: "Fast, focused email client"
-        icon: "fas fa-paper-plane"
+        icon: "fas fa-envelope"
         url: "https://mail.misantropic.net"
 
   - name: "Matrix"
@@ -57,7 +57,7 @@ services:
     items:
       - name: "Element"
         subtitle: "The classic Matrix client"
-        icon: "fas fa-message"
+        icon: "fas fa-comments"
         url: "https://chat.misantropic.net"
       - name: "Sable"
         subtitle: "An almost stable Matrix client"
@@ -73,5 +73,5 @@ services:
     items:
       - name: "UNO"
         subtitle: "Multiplayer with friends or bots"
-        icon: "fas fa-clone"
+        icon: "fas fa-dice"
         url: "https://uno.misantropic.net"
