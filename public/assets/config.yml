@@ -1,5 +1,5 @@
 title: "misantropic"
-subtitle: "fewer letters, fewer people"
+subtitle: "fewer letters, fewer people."
 icon: "fas fa-mask"
 footer: '<p>Developed with <span class="has-text-danger">♥</span> by <a href="https://fatihertem.com" target="_blank" rel="noopener">faith</a></p>'
 connectivityCheck: false
@@ -63,15 +63,15 @@ services:
         subtitle: "An almost stable Matrix client"
         icon: "fas fa-paw"
         url: "https://sable.misantropic.net"
-      - name: "Server"
-        subtitle: "misantropic.net, invite only"
-        icon: "fas fa-server"
-        url: "#about"
+      - name: "Get an account"
+        subtitle: "Invite only. Just ask."
+        icon: "fas fa-user-plus"
+        url: "https://matrix.to/#/@fatih:misantropic.net"
 
   - name: "Play"
     icon: "fas fa-gamepad"
     items:
       - name: "UNO"
         subtitle: "Multiplayer with friends or bots"
-        icon: "fas fa-layer-group"
+        icon: "fas fa-clone"
         url: "https://uno.misantropic.net"
