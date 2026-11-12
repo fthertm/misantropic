@@ -16,16 +16,32 @@ body #app .card .media-left {
   --accent: #88c0d0;
   width: 46px;
   height: 46px;
-  margin-right: 1rem;
+  margin: 0 1rem 0 0;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 12px;
   background: color-mix(in srgb, var(--accent) 16%, transparent);
 }
-body #app .card .media-left .fa-fw {
-  font-size: 21px;
+body #app .card .media-left figure,
+body #app .card .media-left .image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #app .card .media-left .fa-fw,
+body #app .card .media-left i {
   width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 21px;
+  text-align: center;
   color: var(--accent);
 }
 body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
