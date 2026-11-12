@@ -6,7 +6,7 @@ links:
     icon: "fas fa-house"
     url: "#"
   - name: "About"
-    icon: "fas fa-circle-info"
+    icon: "fas fa-terminal"
     url: "#about"
 
 message:
