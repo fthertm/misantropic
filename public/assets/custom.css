@@ -18,7 +18,6 @@ body #app .message .message-body {
   border: none;
   padding: 1.5rem 1.75rem;
   line-height: 1.65;
-  max-width: 82ch;
 }
 
 body #app .message .message-body p + p {
@@ -27,7 +26,7 @@ body #app .message .message-body p + p {
 
 /* definition header */
 body #app .message .message-body p:first-child {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #d8dee9;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
@@ -35,22 +34,22 @@ body #app .message .message-body p:first-child {
 }
 
 body #app .message .message-body p:first-child strong {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: #eceff4;
   letter-spacing: -0.01em;
-  margin-right: 0.4rem;
+  margin-right: 0.35rem;
 }
 
 body #app .message .message-body p:first-child em {
   color: #88c0d0;
   font-style: normal;
   font-family: monospace;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   background: rgba(136, 192, 208, 0.12);
   padding: 2px 6px;
   border-radius: 5px;
-  margin-right: 0.4rem;
+  margin-right: 0.35rem;
 }
 
 /* inline code & links */
@@ -73,14 +72,6 @@ body #app .message .message-body a {
 body #app .message .message-body a:hover {
   color: #8fbcbb !important;
   border-bottom-style: solid;
-}
-
-/* mail obfuscation */
-.mail-obf::after {
-  content: attr(data-user) "@" attr(data-domain);
-  color: #88c0d0;
-  font-family: monospace;
-  font-size: 0.95em;
 }
 
 /* cards & tinted icons */
@@ -132,6 +123,11 @@ body #app .card .media-left i {
   color: var(--accent);
 }
 
+/* homepage column accents */
+body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
+body #app .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
+body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
+
 /* 3-column grid inside single group */
 body #app .columns > .column:only-child {
   display: grid;
@@ -143,15 +139,6 @@ body #app .columns > .column:only-child > h2 {
   grid-column: 1 / -1;
   margin-bottom: 0.25rem;
 }
-
-body #app .columns > .column:nth-child(1) .card .media-left,
-body #app .columns > .column:only-child > div:nth-of-type(1) .card .media-left { --accent: #88c0d0; }
-
-body #app .columns > .column:nth-child(2) .card .media-left,
-body #app .columns > .column:only-child > div:nth-of-type(2) .card .media-left { --accent: #b48ead; }
-
-body #app .columns > .column:nth-child(3) .card .media-left,
-body #app .columns > .column:only-child > div:nth-of-type(3) .card .media-left { --accent: #a3be8c; }
 
 @media (max-width: 768px) {
   body #app .columns > .column:only-child {
