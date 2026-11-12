@@ -58,3 +58,9 @@ body #app .footer a {
   color: var(--link) !important;
   font-weight: 600;
 }
+
+/* Sayfa geçişinde dinamik bileşenlerin erken gizlenmesini önle */
+body #app .column:nth-child(2) .card:first-child {
+  min-height: 76px;
+}
+
