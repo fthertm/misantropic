@@ -33,4 +33,4 @@ services:
       - name: "Say hi on Matrix"
         subtitle: "@fatih:misantropic.net"
         icon: "fas fa-hand"
-        url: "https://chat.misantropic.net/#/user/@fatih:misantropic.net"
+        url: "https://matrix.to/#/@fatih:misantropic.net"
