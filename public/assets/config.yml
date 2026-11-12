@@ -61,7 +61,7 @@ services:
         url: "https://chat.misantropic.net"
       - name: "Sable"
         subtitle: "An almost stable Matrix client"
-        icon: "fas fa-feather"
+        icon: "fas fa-paw"
         url: "https://sable.misantropic.net"
       - name: "Server"
         subtitle: "misantropic.net, invite only"
