@@ -11,5 +11,34 @@ body #app .message .message-body code {
   color: var(--text);
 }
 
-/* slightly bolder icons */
-body #app .card .fa-fw { font-size: 30px; }
+/* service icons: tinted tile, accent color per category */
+body #app .card .media-left {
+  --accent: #88c0d0;
+  width: 46px;
+  height: 46px;
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+}
+body #app .card .media-left .fa-fw {
+  font-size: 21px;
+  width: auto;
+  color: var(--accent);
+}
+body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
+body #app .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
+body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
+
+/* footer: readable contrast */
+body #app .footer,
+body #app .footer p {
+  color: var(--text-subtitle) !important;
+  opacity: 1 !important;
+}
+body #app .footer a {
+  color: var(--link) !important;
+  font-weight: 600;
+}
