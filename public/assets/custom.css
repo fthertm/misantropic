@@ -1,0 +1,15 @@
+/* remove user-facing toggles: theme, layout, search */
+body #app #bighead .navbar-end { display: none !important; }
+
+/* simple navbar on the left */
+body #app #bighead .navbar-start { margin-right: auto; }
+
+/* about page text */
+body #app .message .message-body p + p { margin-top: .75rem; }
+body #app .message .message-body code {
+  background: rgba(0, 0, 0, .25);
+  color: var(--text);
+}
+
+/* slightly bolder icons */
+body #app .card .fa-fw { font-size: 30px; }
