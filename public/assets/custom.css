@@ -56,12 +56,21 @@ body #app .message .message-body a:hover {
   border-bottom-style: solid;
 }
 
+/* mail obfuscation */
+.mail-obf::after {
+  content: attr(data-user) "@" attr(data-domain);
+  color: #88c0d0;
+  font-family: monospace;
+  font-size: 0.95em;
+}
+
 /* cards & tinted icons */
 body #app .card {
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
   transition: transform 0.2s ease, border-color 0.2s ease;
   height: 100%;
+  margin: 0 !important;
 }
 
 body #app .card:hover {
@@ -104,29 +113,29 @@ body #app .card .media-left i {
   color: var(--accent);
 }
 
-/* 3-column grid & accent palette */
-body #app .column .columns {
+/* 3-column grid inside single group */
+body #app .columns > .column:only-child {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-body #app .column .columns > .column {
-  width: 100% !important;
-  padding: 0;
+body #app .columns > .column:only-child > h2 {
+  grid-column: 1 / -1;
+  margin-bottom: 0.25rem;
 }
 
 body #app .columns > .column:nth-child(1) .card .media-left,
-body #app .column .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0; }
+body #app .columns > .column:only-child > div:nth-of-type(1) .card .media-left { --accent: #88c0d0; }
 
 body #app .columns > .column:nth-child(2) .card .media-left,
-body #app .column .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
+body #app .columns > .column:only-child > div:nth-of-type(2) .card .media-left { --accent: #b48ead; }
 
 body #app .columns > .column:nth-child(3) .card .media-left,
-body #app .column .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
+body #app .columns > .column:only-child > div:nth-of-type(3) .card .media-left { --accent: #a3be8c; }
 
 @media (max-width: 768px) {
-  body #app .column .columns {
+  body #app .columns > .column:only-child {
     grid-template-columns: 1fr;
   }
 }
