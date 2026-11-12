@@ -3,7 +3,7 @@ subtitle: "fewer letters, fewer people."
 links:
   - name: "Home"
     icon: "fas fa-house"
-    url: "#top"
+    url: "#"
   - name: "About"
     icon: "fas fa-circle-info"
     url: "#about"
