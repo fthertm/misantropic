@@ -16,10 +16,12 @@ message:
     <p><strong>misantropic</strong> <em>/mi.sæn.ˈtrɒp.ɪk/</em> adj. like misanthropic,
     with fewer h's and no regrets.</p>
     <p>This is my small corner of the internet: a handful of self-hosted tools I run for myself and for friends.</p>
-    <p>Everything here is privacy-minded and built by hand. The Matrix server runs on
-    <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> under the server name
+    <p>Everything here is privacy-minded and built by hand. The Matrix homeserver is
+    <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>, serving the server name
     <code>misantropic.net</code>. Registration is closed, but if you'd like an account just message
     <code>@fatih:misantropic.net</code> on Matrix.</p>
+    <p>Matrix is the best way to reach me. Email works too
+    (<a href="mailto:skynet@misantropic.net">skynet@misantropic.net</a>), but I'd rather you didn't.</p>
 
 services:
   - name: "Elsewhere"
@@ -34,3 +36,7 @@ services:
         subtitle: "@fatih:misantropic.net"
         icon: "fas fa-hand"
         url: "https://matrix.to/#/@fatih:misantropic.net"
+      - name: "Email"
+        subtitle: "Matrix is preferred"
+        icon: "fas fa-envelope"
+        url: "mailto:skynet@misantropic.net"
