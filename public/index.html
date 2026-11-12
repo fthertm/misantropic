@@ -8,23 +8,36 @@
         const memoryCache = new Map();
 
         window.fetch = async function(...args) {
-          const req = args[0];
+          const req = args.at(0);
           const url = typeof req === 'string' ? req : (req && req.url);
 
-          if (url && (url.includes('/_matrix/federation/v1/version') || url.endsWith('.yml'))) {
-            const cached = memoryCache.get(url);
+          if (url && (url.includes('/_matrix/federation/v1/version') || url.includes('.yml'))) {
+            const cacheKey = new URL(url, window.location.origin).pathname;
+            const cached = memoryCache.get(cacheKey);
             if (cached && (Date.now() - cached.time < 300000)) {
               return cached.response.clone();
             }
             const response = await originalFetch.apply(this, args);
             if (response.ok) {
-              memoryCache.set(url, { time: Date.now(), response: response.clone() });
+              memoryCache.set(cacheKey, { time: Date.now(), response: response.clone() });
             }
             return response;
           }
 
           return originalFetch.apply(this, args);
         };
+
+        // Sayfa ilk açıldığında about.yml ve config.yml dosyalarını arka planda RAM'e yükle
+        window.addEventListener('DOMContentLoaded', () => {
+          fetch('assets/about.yml').catch(() => {});
+        });
+
+        // Gecikmeye yol açan eski Service Worker kayıtlarını otomatik temizle
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(regs => {
+            regs.forEach(reg => reg.unregister());
+          });
+        }
       })();
     </script>
     <link rel="icon" href="assets/icons/favicon.ico" />
@@ -35,8 +48,6 @@
     <script type="module" crossorigin src="./resources/index-C32yDzkE.js"></script>
     <link rel="stylesheet" crossorigin href="./resources/index-CyPCBeHl.css">
     <link rel="stylesheet" href="assets/custom.css">
-    <link rel="manifest" href="./assets/manifest.json" crossorigin="use-credentials">
-    <script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script>
   </head>
   <body>
     <div id="app-mount"></div>
