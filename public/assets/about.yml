@@ -13,11 +13,11 @@ message:
   title: "Hi, I'm Faith"
   content: >-
     <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> adj. misanthropic,
-    minus an h, minus the company.</p>
-    <p>I run a few small things here for myself and a couple of friends: a Matrix
-    homeserver, a pastebin, a file drop. Nothing is public, nothing phones home.</p>
+    without h, and no regrets.</p>
+    <p>Everything below is something I host for myself and a few friends. Nothing is
+    public, nothing phones home, nothing asks for your email.</p>
     <p>The <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a>
-    homeserver for <code>misantropic.net</code> is mine. Registration is closed — message
-    <code>@fatih:misantropic.net</code> if you want an account anyway.</p>
+    homeserver is mine. Invite only: message <code>@fatih:misantropic.net</code> if you
+    want an account.</p>
     <p>Matrix is the best way to reach me. Email works too, skynet [at] misantropic.net,
     but I'd rather you didn't.</p>
