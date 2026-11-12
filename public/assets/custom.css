@@ -11,6 +11,57 @@ body #app .message .message-body code {
   color: var(--text);
 }
 
+/* About kutusunu kartlarla uyumlu hale getir ve modernleştir */
+body #app .message {
+  background: var(--card-background);
+  border: 1px solid rgba(136, 192, 208, 0.15);
+  border-left: 4px solid #88c0d0; /* Nord vurgu rengi */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body #app .message .message-body {
+  border: none;
+  padding: 1.5rem 1.75rem;
+  line-height: 1.65;
+  max-width: 82ch; /* Uzun satırların göz yormasını önler */
+}
+
+/* İlk satırdaki sözlük tanımını başlık gibi öne çıkar */
+body #app .message .message-body p:first-child {
+  font-size: 1.1rem;
+  color: #eceff4;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Linklere yumuşak alt çizgi ve Nord vurgusu ekle */
+body #app .message .message-body a {
+  color: #88c0d0 !important;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(136, 192, 208, 0.5);
+  transition: all 0.2s ease;
+}
+
+body #app .message .message-body a:hover {
+  color: #8fbcbb !important;
+  border-bottom-style: solid;
+}
+
+/* Kartlara da aynı kenarlık ve yumuşak geçişi ekle */
+body #app .card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+body #app .card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(136, 192, 208, 0.3);
+}
+
+
 /* service icons: tinted tile, accent color per category */
 body #app .card .media-left {
   --accent: #88c0d0;
