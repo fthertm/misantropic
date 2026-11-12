@@ -5,14 +5,12 @@ body #app #bighead .navbar-start { margin-right: auto; }
 /* about message box */
 body #app .message {
   background: var(--card-background);
-  border: 1px solid rgba(136, 192, 208, 0.15);
-  border-left: 4px solid #88c0d0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 body #app .message .message-header {
-  border-radius: 8px 12px 0 0;
+  border-radius: 12px 12px 0 0;
   padding: 0.85rem 1.75rem;
 }
 
@@ -27,14 +25,35 @@ body #app .message .message-body p + p {
   margin-top: 0.75rem;
 }
 
+/* definition header */
 body #app .message .message-body p:first-child {
-  font-size: 1.1rem;
-  color: #eceff4;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.85rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 1.05rem;
+  color: #d8dee9;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(136, 192, 208, 0.2);
 }
 
+body #app .message .message-body p:first-child strong {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #eceff4;
+  letter-spacing: -0.01em;
+  margin-right: 0.4rem;
+}
+
+body #app .message .message-body p:first-child em {
+  color: #88c0d0;
+  font-style: normal;
+  font-family: monospace;
+  font-size: 0.95rem;
+  background: rgba(136, 192, 208, 0.12);
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-right: 0.4rem;
+}
+
+/* inline code & links */
 body #app .message .message-body code {
   background: rgba(136, 192, 208, 0.12);
   color: #88c0d0;
