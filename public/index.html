@@ -11,11 +11,9 @@
           const req = args[0];
           const url = typeof req === 'string' ? req : (req && req.url);
 
-          // Matrix durum kontrolü ve YAML yapılandırma dosyalarını bellekte tut
           if (url && (url.includes('/_matrix/federation/v1/version') || url.endsWith('.yml'))) {
             const cached = memoryCache.get(url);
-            // 60 saniye boyunca ağa gitmeden RAM'den anında (0 ms) döndür
-            if (cached && (Date.now() - cached.time < 60000)) {
+            if (cached && (Date.now() - cached.time < 300000)) {
               return cached.response.clone();
             }
             const response = await originalFetch.apply(this, args);
