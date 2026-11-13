@@ -163,3 +163,7 @@ body #app button:focus-visible {
   body #app .card { transition: none; }
   body #app .card:hover { transform: none; }
 }
+
+body #app.page-about .columns {
+  display: none;
+}
