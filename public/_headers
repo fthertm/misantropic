@@ -12,9 +12,6 @@
   ! Cache-Control
   Cache-Control: no-cache
 
-/sw.js
-  Cache-Control: no-cache
-
 /.well-known/matrix/*
   Access-Control-Allow-Origin: *
   Content-Type: application/json
