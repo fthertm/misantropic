@@ -147,7 +147,6 @@ body #app .column:nth-child(2) .card:first-child {
   min-height: 76px;
 }
 
-
 /* no flash of white, native dark controls */
 html, body { background: #2e3440; color-scheme: dark; }
 
@@ -164,6 +163,19 @@ body #app button:focus-visible {
   body #app .card:hover { transform: none; }
 }
 
+/* hide services at about page */
 body #app.page-about .columns {
   display: none;
+}
+
+/* footer heart modifications */
+.nord-heart {
+  color: #bf616a !important;
+  margin: 0 3px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.nord-heart:hover {
+  color: #88c0d0 !important;
+  transform: scale(1.2);
 }
