@@ -168,14 +168,28 @@ body #app.page-about .columns {
   display: none;
 }
 
-/* footer heart modifications */
+/* Nord Frost heart with Aurora pulse on hover */
 .nord-heart {
-  color: #bf616a !important;
+  color: #88c0d0 !important;
   margin: 0 3px;
-  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
+  transition: color 0.25s ease;
 }
 
 .nord-heart:hover {
-  color: #88c0d0 !important;
-  transform: scale(1.2);
+  color: #bf616a !important;
+  animation: nord-heartbeat 1.2s ease-in-out infinite;
 }
+
+@keyframes nord-heartbeat {
+  0%, 28%, 70%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.28);
+  }
+  42% {
+    transform: scale(1.18);
+  }
+}
+
