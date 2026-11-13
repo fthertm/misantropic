@@ -58,7 +58,7 @@ services:
       - name: "Homeserver"
         type: "Matrix"
         endpoint: "https://matrix.misantropic.net"
-        subtitle: "Invite only."
+        subtitle: "Invite-only · Continuwuity"
         icon: "fas fa-server"
         url: "#about"
       - name: "Element"
