@@ -1,18 +1,10 @@
-subtitle: "fewer letters, fewer people."
-
-links:
-  - name: "Home"
-    icon: "fas fa-house"
-    url: "#"
-  - name: "About"
-    icon: "fas fa-circle-info"
-    url: "#about"
+services: []
 
 message:
   style: "is-dark"
-  title: "Hi, I'm faith"
+  title: "Hi, I’m faith"
   content: >-
     <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> — <em>adj.</em> misanthropic, minus the "h", no regrets.</p>
     <p>I self-host a quiet corner of the internet for myself and a few friends: a pastebin, a file sealer, webmail, a <a href="https://continuwuity.org" target="_blank" rel="noopener">Continuwuity</a> Matrix homeserver, and UNO (because someone has to).</p>
-    <p><strong>Zero public access. Zero telemetry. Zero tracking.</strong></p>
-    <p>The Matrix server is invite-only. Ping <code>@fatih:misantropic.net</code> if you think you belong here. Email works too (<code>skynet [at] misantropic.net</code>), though I’d genuinely prefer you didn't.</p>
+    <p><strong>Zero telemetry. Zero tracking.</strong></p>
+    <p>The Matrix server is invite-only. Ping <code>@fatih:misantropic.net</code> if you think you belong here. Email works too (<code>skynet [at] misantropic.net</code>), though I’d genuinely prefer you didn’t.</p>

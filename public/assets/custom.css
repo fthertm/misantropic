@@ -147,8 +147,19 @@ body #app .column:nth-child(2) .card:first-child {
   min-height: 76px;
 }
 
-/* Hide services at about page */
-body:has(a[href="#about"].is-active) #app .columns,
-body:has(.message) #app .columns {
-  display: none !important;
+
+/* no flash of white, native dark controls */
+html, body { background: #2e3440; color-scheme: dark; }
+
+/* keyboard focus */
+body #app a:focus-visible,
+body #app button:focus-visible {
+  outline: 2px solid #88c0d0;
+  outline-offset: 2px;
+}
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body #app .card { transition: none; }
+  body #app .card:hover { transform: none; }
 }
