@@ -109,7 +109,7 @@ $&`).replace(/(?:^|\n)([\t ].*)(?:([\n\t ]*)\n(?![\n\t ]))?/g,`$1$2`).replace(/\
 # Default configuration
 
 title: "misantropic"
-subtitle: "fewer letters, fewer people."
+subtitle: ""
 documentTitle: "misantropic"
 
 header: true
