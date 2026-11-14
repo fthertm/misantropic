@@ -51,7 +51,7 @@ body #app:not(.page-about) .navbar-item[href="#"] {
 /* compact main section spacing */
 body #app #main-section {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
 }
 
 /* about message box - full container width on PC, compact vertical spacing */
@@ -229,10 +229,9 @@ body #app .columns > .column:nth-child(1) .group-title i { color: #88c0d0; }
 body #app .columns > .column:nth-child(2) .group-title i { color: #b48ead; }
 body #app .columns > .column:nth-child(3) .group-title i { color: #a3be8c; }
 
-/* footer */
+/* footer - compact padding */
 body #app .footer {
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding: 0.75rem 1.5rem 1rem !important;
 }
 
 body #app .footer,
