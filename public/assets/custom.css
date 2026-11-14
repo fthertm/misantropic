@@ -48,12 +48,6 @@ body #app:not(.page-about) .navbar-item[href="#"] {
   color: #88c0d0 !important;
 }
 
-/* compact main section spacing */
-body #app #main-section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.25rem;
-}
-
 /* about message box - full container width on PC, compact vertical spacing */
 body #app .message {
   background: var(--card-background);
@@ -228,11 +222,6 @@ body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c;
 body #app .columns > .column:nth-child(1) .group-title i { color: #88c0d0; }
 body #app .columns > .column:nth-child(2) .group-title i { color: #b48ead; }
 body #app .columns > .column:nth-child(3) .group-title i { color: #a3be8c; }
-
-/* footer - compact padding */
-body #app .footer {
-  padding: 0.75rem 1.5rem 1rem !important;
-}
 
 body #app .footer,
 body #app .footer p {
