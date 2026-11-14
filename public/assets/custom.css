@@ -2,6 +2,9 @@
 body #app #bighead .navbar-end { display: none !important; }
 body #app #bighead .navbar-start { margin-right: auto; }
 
+/* header logo spacing */
+body #app #bighead .logo { margin-right: 0.75rem; }
+
 /* about message box */
 body #app .message {
   background: var(--card-background);
@@ -10,6 +13,8 @@ body #app .message {
 }
 
 body #app .message .message-header {
+  background: #434c5e;
+  color: #eceff4;
   border-radius: 12px 12px 0 0;
   padding: 0.95rem 1.75rem;
   font-size: 1.15rem;
@@ -43,7 +48,8 @@ body #app .message .message-body p:first-child strong {
   margin-right: 0.35rem;
 }
 
-body #app .message .message-body p:first-child em {
+/* only the pronunciation gets the pill; "adj." stays a normal italic */
+body #app .message .message-body p:first-child em:first-of-type {
   color: #88c0d0;
   font-style: normal;
   font-family: monospace;
@@ -129,6 +135,11 @@ body #app .columns > .column:nth-child(1) .card .media-left { --accent: #88c0d0;
 body #app .columns > .column:nth-child(2) .card .media-left { --accent: #b48ead; }
 body #app .columns > .column:nth-child(3) .card .media-left { --accent: #a3be8c; }
 
+/* group title icons follow the column accent */
+body #app .columns > .column:nth-child(1) .group-title i { color: #88c0d0; }
+body #app .columns > .column:nth-child(2) .group-title i { color: #b48ead; }
+body #app .columns > .column:nth-child(3) .group-title i { color: #a3be8c; }
+
 /* footer */
 body #app .footer,
 body #app .footer p {
@@ -139,6 +150,10 @@ body #app .footer p {
 body #app .footer a {
   color: var(--link) !important;
   font-weight: 600;
+}
+
+body #app .footer a:hover {
+  color: var(--link-hover) !important;
 }
 
 /* prevent layout shift on load */
@@ -160,6 +175,7 @@ body #app button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   body #app .card { transition: none; }
   body #app .card:hover { transform: none; }
+  .nord-heart:hover { animation: none; }
 }
 
 /* hide services at about page */
@@ -191,4 +207,3 @@ body #app.page-about .columns {
     transform: scale(1.18);
   }
 }
-
