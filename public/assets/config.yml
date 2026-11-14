@@ -78,3 +78,7 @@ services:
         subtitle: "Multiplayer with friends or bots"
         icon: "fas fa-clone"
         url: "https://uno.misantropic.net"
+      - name: "Flappy Penguin"
+        subtitle: "Dodge the icicles in the dark"
+        icon: "fas fa-feather-pointed"
+        url: "https://flap.misantropic.net"
