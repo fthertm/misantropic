@@ -11,7 +11,3 @@
 /.well-known/matrix/*
   Access-Control-Allow-Origin: *
   Content-Type: application/json
-
-/.well-known/sable
-  Access-Control-Allow-Origin: https://sable.misantropic.net
-  Content-Type: application/json
