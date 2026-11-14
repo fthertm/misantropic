@@ -48,22 +48,27 @@ body #app:not(.page-about) .navbar-item[href="#"] {
   color: #88c0d0 !important;
 }
 
-/* about message box */
+/* compact main section spacing */
+body #app #main-section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* about message box - full container width on PC, compact vertical spacing */
 body #app .message {
   background: var(--card-background);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  max-width: 760px;
-  margin: 1.5rem auto;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 body #app .message .message-header {
   background: #434c5e;
   color: #eceff4;
   border-radius: 12px 12px 0 0;
-  padding: 0.95rem 1.75rem;
-  font-size: 1.15rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
@@ -74,19 +79,19 @@ body #app .message .message-header i {
 
 body #app .message .message-body {
   border: none;
-  padding: 1.5rem 1.75rem;
-  line-height: 1.65;
+  padding: 1.25rem 1.5rem;
+  line-height: 1.6;
 }
 
 /* definition header */
 body #app .message .message-body p:first-child {
-  font-size: 0.93rem;
+  font-size: 0.98rem;
   color: #d8dee9;
   background: rgba(46, 52, 64, 0.55);
   border-left: 3px solid #88c0d0;
-  padding: 0.85rem 1.1rem;
+  padding: 0.75rem 1.1rem;
   border-radius: 0 8px 8px 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 body #app .message .message-body p:first-child strong {
@@ -102,7 +107,7 @@ body #app .message .message-body p:first-child em:first-of-type {
   color: #88c0d0;
   font-style: normal;
   font-family: monospace;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   background: rgba(136, 192, 208, 0.12);
   padding: 2px 6px;
   border-radius: 5px;
@@ -111,8 +116,8 @@ body #app .message .message-body p:first-child em:first-of-type {
 
 /* contact section */
 body #app .message .message-body .contact-section {
-  margin-top: 1.25rem;
-  padding-top: 1.15rem;
+  margin-top: 1rem;
+  padding-top: 0.95rem;
   border-top: 1px solid rgba(136, 192, 208, 0.15);
 }
 
@@ -120,7 +125,7 @@ body #app .message .message-body .contact-section p {
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  margin-top: 0.75rem;
+  margin-top: 0.6rem;
   color: #d8dee9;
 }
 
@@ -225,6 +230,11 @@ body #app .columns > .column:nth-child(2) .group-title i { color: #b48ead; }
 body #app .columns > .column:nth-child(3) .group-title i { color: #a3be8c; }
 
 /* footer */
+body #app .footer {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
 body #app .footer,
 body #app .footer p {
   color: var(--text-subtitle) !important;
