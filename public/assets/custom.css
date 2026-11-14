@@ -1,6 +1,14 @@
 /* navbar */
 body #app #bighead .navbar-end { display: none !important; }
 body #app #bighead .navbar-start { margin-right: auto; }
+body #app #bighead .navbar-item:focus,
+body #app #bighead .navbar-item:focus-within {
+  background-color: transparent !important;
+}
+
+body #app #bighead .navbar-item:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
 
 /* header logo spacing */
 body #app #bighead .logo { margin-right: 0.75rem; }
