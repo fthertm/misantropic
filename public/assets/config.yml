@@ -79,6 +79,6 @@ services:
         icon: "fas fa-clone"
         url: "https://uno.misantropic.net"
       - name: "Flappy Penguin"
-        subtitle: "Dodge the icicles in the dark"
-        icon: "fas fa-feather-pointed"
+        subtitle: "Arctic arcade flyer"
+        icon: "fas fa-icicles"
         url: "/flap"
