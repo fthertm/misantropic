@@ -10,8 +10,9 @@ body #app #bighead .navbar-item:hover {
   background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-/* header logo spacing & vertical alignment */
-body #app #bighead .media {
+/* header logo & title alignment */
+body #app #bighead .first-line .container {
+  display: flex;
   align-items: center;
 }
 
@@ -21,14 +22,26 @@ body #app #bighead .logo {
   align-items: center;
 }
 
-body #app #bighead .media-content h1 {
-  margin: 0;
-  line-height: 1.1;
+body #app #bighead .logo a,
+body #app #bighead .logo img {
+  display: block;
 }
 
-body #app #bighead .media-content .subtitle:empty {
+body #app #bighead .dashboard-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body #app #bighead .dashboard-title .headline {
   display: none;
 }
+
+body #app #bighead .dashboard-title h1 {
+  margin: 0;
+  line-height: 1;
+}
+
 
 /* active page indicator */
 body #app.page-about .navbar-item[href="#about"],
