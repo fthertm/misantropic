@@ -6,5 +6,7 @@ message:
   content: >-
     <p><strong>misantropic</strong> <em>/ˌmɪs.ənˈtrɒp.ɪk/</em> — <em>adj.</em> having a general dislike for human society, minus an “h”.</p>
     <p>This is my playground, and also a small self-hosted corner of the internet where I keep the things I build and run.</p>
-    <p>The Matrix homeserver is invite-only. If you’d like an account, message me: <code>@fatih:misantropic.net</code>.</p>
-    <p>You can also email me at <code>skynet [at] misantropic.net</code>, though I’d rather you didn’t.</p>
+    <div class="contact-section">
+      <p><i class="fas fa-comments"></i> The Matrix homeserver is invite-only. If you’d like an account, message me: <code>@fatih:misantropic.net</code></p>
+      <p><i class="fas fa-envelope"></i> You can also email me at <code>skynet [at] misantropic.net</code>, though I’d rather you didn’t.</p>
+    </div>

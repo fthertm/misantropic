@@ -42,7 +42,6 @@ body #app #bighead .dashboard-title h1 {
   line-height: 1;
 }
 
-
 /* active page indicator */
 body #app.page-about .navbar-item[href="#about"],
 body #app:not(.page-about) .navbar-item[href="#"] {
@@ -54,6 +53,9 @@ body #app .message {
   background: var(--card-background);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
+  max-width: 720px;
+  margin: 1.5rem auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 body #app .message .message-header {
@@ -67,7 +69,7 @@ body #app .message .message-header {
 
 body #app .message .message-header i {
   color: #88c0d0;
-  margin-right: 0.25rem;
+  margin-right: 0.35rem;
 }
 
 body #app .message .message-body {
@@ -76,17 +78,15 @@ body #app .message .message-body {
   line-height: 1.65;
 }
 
-body #app .message .message-body p + p {
-  margin-top: 0.75rem;
-}
-
 /* definition header */
 body #app .message .message-body p:first-child {
   font-size: 1rem;
   color: #d8dee9;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid rgba(136, 192, 208, 0.2);
+  background: rgba(46, 52, 64, 0.55);
+  border-left: 3px solid #88c0d0;
+  padding: 0.9rem 1.15rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1.25rem;
 }
 
 body #app .message .message-body p:first-child strong {
@@ -109,6 +109,33 @@ body #app .message .message-body p:first-child em:first-of-type {
   margin-right: 0.35rem;
 }
 
+/* contact section */
+body #app .message .message-body .contact-section {
+  margin-top: 1.25rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(136, 192, 208, 0.15);
+}
+
+body #app .message .message-body .contact-section p {
+  margin-top: 0.6rem;
+  color: #d8dee9;
+}
+
+body #app .message .message-body .contact-section p:first-child {
+  margin-top: 0;
+  background: transparent;
+  border-left: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+body #app .message .message-body .contact-section i {
+  color: #88c0d0;
+  width: 18px;
+  margin-right: 0.4rem;
+  text-align: center;
+}
+
 /* inline code & links */
 body #app .message .message-body code {
   background: rgba(136, 192, 208, 0.12);
@@ -117,6 +144,8 @@ body #app .message .message-body code {
   border-radius: 6px;
   padding: 2px 7px;
   font-size: 0.9em;
+  user-select: all;
+  cursor: pointer;
 }
 
 body #app .message .message-body a {
