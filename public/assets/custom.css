@@ -53,7 +53,7 @@ body #app .message {
   background: var(--card-background);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  max-width: 720px;
+  max-width: 760px;
   margin: 1.5rem auto;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
@@ -117,7 +117,10 @@ body #app .message .message-body .contact-section {
 }
 
 body #app .message .message-body .contact-section p {
-  margin-top: 0.6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
   color: #d8dee9;
 }
 
@@ -132,7 +135,9 @@ body #app .message .message-body .contact-section p:first-child {
 body #app .message .message-body .contact-section i {
   color: #88c0d0;
   width: 18px;
-  margin-right: 0.4rem;
+  margin-top: 0.3rem;
+  margin-right: 0;
+  flex-shrink: 0;
   text-align: center;
 }
 
