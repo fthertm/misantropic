@@ -266,9 +266,3 @@ footer .heart:hover { color: var(--red); animation: heartbeat 1.2s ease-in-out i
   14% { transform: scale(1.28); }
   42% { transform: scale(1.18); }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .card { transition: none; }
-  .card:hover { transform: none; }
-  footer .heart:hover { animation: none; }
-}
