@@ -2,11 +2,11 @@
 //
 // Shell files are served from the cache first (instant load, works offline) and refreshed from
 // the network in the background; a new version shows up on the next visit.
-// NOT cached: /.well-known/*, other origins (the Matrix status request).
+// NOT cached: /.well-known/*, /uno/* (own Worker + Durable Objects), other origins.
 //
 // If you add or remove shell files, or want to reset the cache, bump the version in CACHE.
 
-const CACHE = "misantropic-v2";
+const CACHE = "misantropic-v3";
 
 const SHELL = [
   "/",
@@ -43,7 +43,7 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-const BYPASS = [/^\/\.well-known\//, /^\/sw\.js$/];
+const BYPASS = [/^\/\.well-known\//, /^\/sw\.js$/, /^\/uno(?:\/|$)/];
 
 self.addEventListener("fetch", (event) => {
   const req = event.request;
