@@ -1,0 +1,104 @@
+{
+  "title": "misantropic",
+  "icon": "igloo",
+  "footer": "Created with :heart: by [fatih](https://fatihertem.com)",
+  "tabs": [
+    {
+      "id": "home",
+      "name": "Home",
+      "icon": "house",
+      "groups": [
+        {
+          "name": "Tools",
+          "icon": "screwdriver-wrench",
+          "items": [
+            {
+              "name": "binthere",
+              "subtitle": "Zero-knowledge pastebin",
+              "icon": "paste",
+              "url": "https://paste.misantropic.net"
+            },
+            {
+              "name": "Seal",
+              "subtitle": "Offline file encryption in your browser",
+              "icon": "lock",
+              "url": "https://seal.misantropic.net"
+            },
+            {
+              "name": "Mail",
+              "subtitle": "Fast, focused email client",
+              "icon": "envelope",
+              "url": "https://mail.misantropic.net"
+            }
+          ]
+        },
+        {
+          "name": "Matrix",
+          "icon": "matrix",
+          "items": [
+            {
+              "name": "Homeserver",
+              "subtitle": "Invite-only · Continuwuity",
+              "icon": "server",
+              "url": "#about",
+              "matrix": "https://matrix.misantropic.net"
+            },
+            {
+              "name": "Element",
+              "subtitle": "The classic Matrix client",
+              "icon": "comments",
+              "url": "https://chat.misantropic.net"
+            },
+            {
+              "name": "Sable",
+              "subtitle": "An almost stable Matrix client",
+              "icon": "paw",
+              "url": "https://sable.misantropic.net"
+            }
+          ]
+        },
+        {
+          "name": "Play",
+          "icon": "gamepad",
+          "items": [
+            {
+              "name": "UNO",
+              "subtitle": "Multiplayer with friends or bots",
+              "icon": "clone",
+              "url": "https://uno.misantropic.net"
+            },
+            {
+              "name": "Flappy Penguin",
+              "subtitle": "Arctic arcade flyer",
+              "icon": "icicles",
+              "url": "/flap"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "icon": "circle-info",
+      "article": {
+        "title": "Hi, I’m fatih",
+        "icon": "ghost",
+        "intro": "**misantropic** */ˌmɪs.ənˈtrɒp.ɪk/* — *adj.* having a general dislike for human society, minus an “h”.",
+        "paragraphs": [
+          "This is my playground, and also a small self-hosted corner of the internet where I keep the things I build and run."
+        ],
+        "contact": [
+          {
+            "icon": "comments",
+            "text": "The Matrix homeserver is invite-only. If you’d like an account, message me: `@fatih:misantropic.net`"
+          },
+          {
+            "icon": "envelope",
+            "text": "You can also email me at `skynet [at] misantropic.net`, though I’d rather you didn’t."
+          }
+        ]
+      }
+    }
+  ]
+}

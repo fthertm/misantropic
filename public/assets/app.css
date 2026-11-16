@@ -1,0 +1,250 @@
+/* misantropic — Nord teması. Renkler :root içindeki değişkenlerden gelir. */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(fonts/noto-sans-latin.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord4: #d8dee9;
+  --nord6: #eceff4;
+  --frost: #88c0d0;
+  --frost-2: #8fbcbb;
+  --blue: #5e81ac;
+  --blue-dark: #4c6a8f;
+  --yellow: #ebcb8b;
+  --red: #bf616a;
+  --accent-1: #88c0d0;
+  --accent-2: #b48ead;
+  --accent-3: #a3be8c;
+  --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--nord0);
+  text-rendering: optimizeLegibility;
+  color-scheme: dark;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--nord0);
+  color: var(--nord6);
+  font: 400 16px/1.5 "Noto Sans", sans-serif;
+  min-width: 320px;
+  overflow-x: hidden;
+  display: flex; flex-direction: column;
+  min-height: 100vh; min-height: 100dvh;
+}
+
+a { color: var(--frost); text-decoration: none; }
+a:hover { color: var(--yellow); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--frost); outline-offset: 2px; }
+
+/* satır içi SVG ikonlar */
+.i {
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  fill: currentColor;
+  vertical-align: -0.125em;
+  overflow: visible;
+  flex: none;
+}
+
+/* sayfa genişliği */
+.wrap { width: 100%; margin: 0 auto; }
+@media (min-width: 1024px) { .wrap { max-width: 960px; width: calc(100% - 64px); } }
+@media (min-width: 1216px) { .wrap { max-width: 1152px; } }
+@media (min-width: 1408px) { .wrap { max-width: 1344px; } }
+
+/* üst başlık: marka solda, sekmeler her zaman görünür */
+.top { background: var(--blue-dark); }
+.head { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between; padding: 0 12px; }
+.brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; color: var(--nord6); }
+.brand:hover { color: var(--nord6); }
+.brand .i { height: 34px; }
+.brand span { font-size: 28px; font-weight: 400; line-height: 36px; letter-spacing: -0.01em; }
+
+.tabs { display: flex; flex: 1 1 100%; gap: 2px; margin: 0 -12px; padding: 0 12px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs a {
+  flex: none;
+  display: flex; align-items: center; gap: 8px;
+  height: 48px; padding: 0 12px;
+  color: var(--nord4);
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+.tabs a .i { height: 16px; }
+.tabs a:hover { color: var(--nord6); background: rgba(255, 255, 255, 0.06); }
+.tabs a[aria-current="page"] { color: var(--nord6); border-bottom-color: var(--frost); }
+.tabs a:focus-visible { outline-offset: -2px; }
+
+@media (min-width: 640px) {
+  .tabs { flex: 0 1 auto; margin: 0 -12px 0 0; justify-content: flex-end; }
+  .tabs a { height: auto; }
+}
+
+/* içerik */
+main { flex: 1; padding: 19.2px 12px 32px; }
+
+.groups { display: grid; grid-template-columns: 1fr; margin: -12px; }
+@media (min-width: 769px) { .groups { grid-template-columns: repeat(3, 1fr); } }
+.group { padding: 12px; min-width: 0; --accent: var(--accent-1); }
+.group:nth-child(3n + 2) { --accent: var(--accent-2); }
+.group:nth-child(3n + 3) { --accent: var(--accent-3); }
+
+.group h2 {
+  display: flex; align-items: center;
+  margin: 19.2px 0 8px;
+  padding-bottom: 12px;
+  font-size: 20.8px; font-weight: 400; line-height: 31.2px;
+}
+.group h2 .i { width: 28px; height: 22.4px; margin-right: 15px; color: var(--accent); }
+
+.card {
+  position: relative;
+  display: block;
+  margin-bottom: 9.6px;
+  padding: 20.8px 20.8px 18.2px;
+  background: var(--nord1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  color: var(--nord6);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: rgba(136, 192, 208, 0.3); color: var(--nord6); }
+.card-in { display: flex; align-items: flex-start; }
+.card-ico {
+  flex: none;
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px;
+  margin-right: 16px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--accent);
+}
+.card-ico .i { height: 32px; }
+.card-txt { flex: 1 1 auto; min-width: 0; }
+.card-title, .card-sub { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-title { margin: 0 0 3px; font-size: 17.6px; font-weight: 500; line-height: 22.88px; color: var(--nord6); }
+.card-sub { margin: 0; font-size: 14.4px; font-weight: 300; line-height: 18px; color: var(--nord4); }
+
+/* Matrix durum göstergesi */
+.status {
+  flex: none;
+  margin-left: 4px;
+  font-size: 12.8px; line-height: 19.2px;
+  color: var(--nord6);
+  white-space: nowrap;
+}
+.status::before {
+  content: " ";
+  display: inline-block;
+  width: 7px; height: 7px;
+  margin-right: 10px;
+  border: 1px solid #000;
+  border-radius: 7px;
+}
+.status.online::before { background: #94e185; border-color: #78d965; box-shadow: 0 0 5px 1px #94e185; }
+.status.offline::before { background: #c9404d; border-color: #c42c3b; box-shadow: 0 0 5px 1px #c9404d; }
+
+/* hakkında */
+.about {
+  margin: 0;
+  background: var(--nord1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+}
+.about-head {
+  display: flex; align-items: center;
+  padding: 12.8px 24px;
+  background: var(--nord2);
+  font-size: 17.6px; font-weight: 600; line-height: 22px;
+  color: var(--nord6);
+}
+.about-head .i { width: 22px; height: 17.6px; margin-right: 10.2px; color: var(--frost); }
+.about-head p { margin: 0; }
+.about-body { padding: 20px 24px; line-height: 1.6; }
+.about-body p { margin: 0 0 16px; }
+.about-body > p:last-child { margin-bottom: 0; }
+
+.about-body .intro {
+  font-size: 0.98rem;
+  color: var(--nord4);
+  background: rgba(46, 52, 64, 0.55);
+  border-left: 3px solid var(--frost);
+  padding: 0.75rem 1.1rem;
+  border-radius: 0 8px 8px 0;
+}
+.about-body .intro strong { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin-right: 0.35rem; }
+.about-body .intro em:first-of-type {
+  color: var(--frost);
+  font-style: normal;
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: rgba(136, 192, 208, 0.12);
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin-right: 0.35rem;
+}
+
+.contact { margin-top: 1rem; padding-top: 0.95rem; border-top: 1px solid rgba(136, 192, 208, 0.15); }
+.contact p { display: flex; align-items: flex-start; gap: 0.6rem; margin: 0 0 16px; color: var(--nord4); }
+.contact p:first-child { font-size: 0.98rem; }
+.contact p:last-child { margin-bottom: 0; }
+.contact .i { width: 18px; height: 1em; margin-top: 4.8px; color: var(--frost); }
+
+.about-body code {
+  background: rgba(136, 192, 208, 0.12);
+  color: var(--frost);
+  border: 1px solid rgba(136, 192, 208, 0.25);
+  border-radius: 6px;
+  padding: 2px 7px;
+  font-family: monospace;
+  font-size: 0.9em;
+  user-select: all;
+  cursor: pointer;
+}
+.about-body a { color: var(--frost); border-bottom: 1px dashed rgba(136, 192, 208, 0.5); transition: all 0.2s ease; }
+.about-body a:hover { color: var(--frost-2); border-bottom-style: solid; }
+
+/* alt bilgi */
+footer {
+  padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
+  background: var(--nord1);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+  font-size: 13.6px; line-height: 20.4px;
+  color: var(--nord4);
+}
+footer p { margin: 0; }
+footer a { font-weight: 600; }
+footer .heart { color: var(--frost); margin: 0 3px; height: 13.6px; transition: color 0.25s ease; }
+footer .heart:hover { color: var(--red); animation: heartbeat 1.2s ease-in-out infinite; }
+
+@keyframes heartbeat {
+  0%, 28%, 70%, 100% { transform: scale(1); }
+  14% { transform: scale(1.28); }
+  42% { transform: scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+  .card:hover { transform: none; }
+  footer .heart:hover { animation: none; }
+}

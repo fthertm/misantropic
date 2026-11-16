@@ -1,0 +1,8 @@
+{
+  "name": "misantropic",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node check.mjs"
+  }
+}
