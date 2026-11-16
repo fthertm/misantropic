@@ -1,4 +1,4 @@
-/* misantropic — Nord teması. Renkler :root içindeki değişkenlerden gelir. */
+/* misantropic — Nord theme. All colors come from the variables in :root. */
 @font-face {
   font-family: "Noto Sans";
   font-style: normal;
@@ -17,13 +17,31 @@
   --frost: #88c0d0;
   --frost-2: #8fbcbb;
   --blue: #5e81ac;
-  --blue-dark: #4c6a8f;
+  --purple: #b48ead;
+  --green: #a3be8c;
   --yellow: #ebcb8b;
   --red: #bf616a;
-  --accent-1: #88c0d0;
-  --accent-2: #b48ead;
-  --accent-3: #a3be8c;
-  --shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+
+  /* Header: --blue 75% + --nord0 25% (about 4.5:1 with white text).
+     Keep in sync with theme-color in index.html and manifest.webmanifest. */
+  --head: #526e96;
+
+  /* Column accents, selected per group with "accent" in content.json */
+  --accent-1: var(--frost);
+  --accent-2: var(--purple);
+  --accent-3: var(--green);
+
+  --line: var(--nord2);
+  --hover: color-mix(in srgb, var(--nord6) 8%, transparent);
+  --frost-bg: color-mix(in srgb, var(--frost) 12%, transparent);
+  --frost-line: color-mix(in srgb, var(--frost) 25%, transparent);
+  --shadow: 0 2px 15px color-mix(in srgb, var(--nord0) 55%, #000);
+  --shadow-lg: 0 8px 20px color-mix(in srgb, var(--nord0) 40%, #000);
+
+  /* Two corner radii: small (inline pieces) and large (surfaces) */
+  --r-s: 6px;
+  --r-l: 12px;
+  --mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, "DejaVu Sans Mono", monospace;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -47,11 +65,12 @@ body {
   min-height: 100vh; min-height: 100dvh;
 }
 
+/* Hover rule 1: text links turn yellow. Surfaces (cards, tabs) use rule 2 below. */
 a { color: var(--frost); text-decoration: none; }
 a:hover { color: var(--yellow); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--frost); outline-offset: 2px; }
 
-/* satır içi SVG ikonlar */
+/* Inline SVG icons */
 .i {
   display: inline-block;
   height: 1em;
@@ -62,14 +81,14 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--frost); outline
   flex: none;
 }
 
-/* sayfa genişliği */
+/* Page width */
 .wrap { width: 100%; margin: 0 auto; }
 @media (min-width: 1024px) { .wrap { max-width: 960px; width: calc(100% - 64px); } }
 @media (min-width: 1216px) { .wrap { max-width: 1152px; } }
 @media (min-width: 1408px) { .wrap { max-width: 1344px; } }
 
-/* üst başlık: marka solda, sekmeler her zaman görünür */
-.top { background: var(--blue-dark); }
+/* Header: brand on the left, tabs always visible */
+.top { background: var(--head); }
 .head { display: flex; flex-wrap: wrap; align-items: stretch; justify-content: space-between; padding: 0 12px; }
 .brand { display: flex; align-items: center; gap: 12px; padding: 14px 0; color: var(--nord6); }
 .brand:hover { color: var(--nord6); }
@@ -87,7 +106,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--frost); outline
   white-space: nowrap;
 }
 .tabs a .i { height: 16px; }
-.tabs a:hover { color: var(--nord6); background: rgba(255, 255, 255, 0.06); }
+.tabs a:hover { color: var(--nord6); background: var(--hover); }
 .tabs a[aria-current="page"] { color: var(--nord6); border-bottom-color: var(--frost); }
 .tabs a:focus-visible { outline-offset: -2px; }
 
@@ -96,14 +115,19 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--frost); outline
   .tabs a { height: auto; }
 }
 
-/* içerik */
+/* Content */
 main { flex: 1; padding: 19.2px 12px 32px; }
 
 .groups { display: grid; grid-template-columns: 1fr; margin: -12px; }
 @media (min-width: 769px) { .groups { grid-template-columns: repeat(3, 1fr); } }
+
+/* Accent: set explicitly with data-accent, otherwise cycles by column position */
 .group { padding: 12px; min-width: 0; --accent: var(--accent-1); }
 .group:nth-child(3n + 2) { --accent: var(--accent-2); }
 .group:nth-child(3n + 3) { --accent: var(--accent-3); }
+.group[data-accent="frost"]  { --accent: var(--accent-1); }
+.group[data-accent="purple"] { --accent: var(--accent-2); }
+.group[data-accent="green"]  { --accent: var(--accent-3); }
 
 .group h2 {
   display: flex; align-items: center;
@@ -119,20 +143,21 @@ main { flex: 1; padding: 19.2px 12px 32px; }
   margin-bottom: 9.6px;
   padding: 20.8px 20.8px 18.2px;
   background: var(--nord1);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
   box-shadow: var(--shadow);
   color: var(--nord6);
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.card:hover { transform: translateY(-2px); border-color: rgba(136, 192, 208, 0.3); color: var(--nord6); }
+/* Hover rule 2: surfaces lift and get a frost border */
+.card:hover { transform: translateY(-2px); border-color: var(--frost-line); color: var(--nord6); }
 .card-in { display: flex; align-items: flex-start; }
 .card-ico {
   flex: none;
   display: flex; align-items: center; justify-content: center;
   width: 46px; height: 46px;
   margin-right: 16px;
-  border-radius: 12px;
+  border-radius: var(--r-l);
   background: color-mix(in srgb, var(--accent) 16%, transparent);
   color: var(--accent);
 }
@@ -142,7 +167,7 @@ main { flex: 1; padding: 19.2px 12px 32px; }
 .card-title { margin: 0 0 3px; font-size: 17.6px; font-weight: 500; line-height: 22.88px; color: var(--nord6); }
 .card-sub { margin: 0; font-size: 14.4px; font-weight: 300; line-height: 18px; color: var(--nord4); }
 
-/* Matrix durum göstergesi */
+/* Matrix status indicator: flat Nord green/red dot, no border or glow */
 .status {
   flex: none;
   margin-left: 4px;
@@ -155,19 +180,18 @@ main { flex: 1; padding: 19.2px 12px 32px; }
   display: inline-block;
   width: 7px; height: 7px;
   margin-right: 10px;
-  border: 1px solid #000;
-  border-radius: 7px;
+  border-radius: 50%;
 }
-.status.online::before { background: #94e185; border-color: #78d965; box-shadow: 0 0 5px 1px #94e185; }
-.status.offline::before { background: #c9404d; border-color: #c42c3b; box-shadow: 0 0 5px 1px #c9404d; }
+.status.online::before { background: var(--green); }
+.status.offline::before { background: var(--red); }
 
-/* hakkında */
+/* About */
 .about {
   margin: 0;
   background: var(--nord1);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  border: 1px solid var(--line);
+  border-radius: var(--r-l);
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
 }
 .about-head {
@@ -186,48 +210,48 @@ main { flex: 1; padding: 19.2px 12px 32px; }
 .about-body .intro {
   font-size: 0.98rem;
   color: var(--nord4);
-  background: rgba(46, 52, 64, 0.55);
+  background: color-mix(in srgb, var(--nord0) 55%, transparent);
   border-left: 3px solid var(--frost);
   padding: 0.75rem 1.1rem;
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--r-s) var(--r-s) 0;
 }
 .about-body .intro strong { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; margin-right: 0.35rem; }
 .about-body .intro em:first-of-type {
   color: var(--frost);
   font-style: normal;
-  font-family: monospace;
+  font-family: var(--mono);
   font-size: 0.9rem;
-  background: rgba(136, 192, 208, 0.12);
+  background: var(--frost-bg);
   padding: 2px 6px;
-  border-radius: 5px;
+  border-radius: var(--r-s);
   margin-right: 0.35rem;
 }
 
-.contact { margin-top: 1rem; padding-top: 0.95rem; border-top: 1px solid rgba(136, 192, 208, 0.15); }
+.contact { margin-top: 1rem; padding-top: 0.95rem; border-top: 1px solid var(--frost-line); }
 .contact p { display: flex; align-items: flex-start; gap: 0.6rem; margin: 0 0 16px; color: var(--nord4); }
 .contact p:first-child { font-size: 0.98rem; }
 .contact p:last-child { margin-bottom: 0; }
 .contact .i { width: 18px; height: 1em; margin-top: 4.8px; color: var(--frost); }
 
 .about-body code {
-  background: rgba(136, 192, 208, 0.12);
+  background: var(--frost-bg);
   color: var(--frost);
-  border: 1px solid rgba(136, 192, 208, 0.25);
-  border-radius: 6px;
+  border: 1px solid var(--frost-line);
+  border-radius: var(--r-s);
   padding: 2px 7px;
-  font-family: monospace;
+  font-family: var(--mono);
   font-size: 0.9em;
   user-select: all;
   cursor: pointer;
 }
-.about-body a { color: var(--frost); border-bottom: 1px dashed rgba(136, 192, 208, 0.5); transition: all 0.2s ease; }
-.about-body a:hover { color: var(--frost-2); border-bottom-style: solid; }
+.about-body a { color: var(--frost); border-bottom: 1px dashed color-mix(in srgb, var(--frost) 50%, transparent); transition: all 0.2s ease; }
+.about-body a:hover { border-bottom-style: solid; } /* color comes from the global yellow link hover */
 
-/* alt bilgi */
+/* Footer */
 footer {
   padding: 10px 8px calc(10px + env(safe-area-inset-bottom));
   background: var(--nord1);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--line);
   text-align: center;
   font-size: 13.6px; line-height: 20.4px;
   color: var(--nord4);

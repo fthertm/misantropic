@@ -1,12 +1,12 @@
-// misantropic service worker — "çevrimdışı kabuk + arka planda güncelle" (stale-while-revalidate).
+// misantropic service worker — offline shell + background refresh (stale-while-revalidate).
 //
-// Kabuk dosyaları önce önbellekten verilir (anında açılır, çevrimdışı çalışır), arkada ağdan
-// yenilenir; yeni sürüm bir sonraki açılışta görünür.
-// Önbelleğe ALINMAYANLAR: /flap (ayrı worker), /.well-known/*, başka origin'ler (Matrix durum isteği).
+// Shell files are served from the cache first (instant load, works offline) and refreshed from
+// the network in the background; a new version shows up on the next visit.
+// NOT cached: /flap (separate worker), /.well-known/*, other origins (the Matrix status request).
 //
-// Kabuk dosyası ekler/silersen veya önbelleği sıfırlamak istersen CACHE adındaki sürümü artır.
+// If you add or remove shell files, or want to reset the cache, bump the version in CACHE.
 
-const CACHE = "misantropic-v2";
+const CACHE = "misantropic-v1";
 
 const SHELL = [
   "/",
@@ -49,10 +49,10 @@ self.addEventListener("fetch", (event) => {
   if (req.method !== "GET") return;
 
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return; // Matrix vb. doğrudan ağa
-  if (BYPASS.some((re) => re.test(url.pathname))) return; // doğrudan ağa
+  if (url.origin !== self.location.origin) return; // Matrix etc. go straight to the network
+  if (BYPASS.some((re) => re.test(url.pathname))) return; // straight to the network
 
-  // Sayfa gezintileri: yalnızca ana sayfa kabuğu önbellekten; diğer yollar (404 vb.) ağa gider.
+  // Page navigations: only the home page shell comes from the cache; other paths (404 etc.) hit the network.
   let key = req;
   if (req.mode === "navigate") {
     if (url.pathname !== "/" && url.pathname !== "/index.html") return;

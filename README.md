@@ -1,44 +1,45 @@
 # misantropic
 
-misantropic.net ana sayfası. Build adımı ve bağımlılığı olmayan, saf HTML/CSS/JS bir sayfa;
-Cloudflare Worker (static assets) olarak yayınlanır. `/flap` ayrı bir worker'dır ve bu projeye dahil değildir.
+The misantropic.net home page. Plain HTML/CSS/JS with no build step and no dependencies,
+published as a Cloudflare Worker (static assets). `/flap` is a separate worker and is not part of this project.
 
 ```
 public/
-  index.html            küçük sayfa iskeleti
-  content.json          ← TÜM içerik burada (servisler, hakkında metni, menü, alt bilgi)
-  assets/app.js         content.json'u çizen kod
-  assets/app.css        Nord teması (renkler :root içinde)
-  assets/icons.js       satır içi SVG ikonlar
-  sw.js                 service worker (çevrimdışı kabuk)
-  manifest.webmanifest  PWA bildirimi
-  _headers              güvenlik başlıkları, CSP, önbellek kuralları
-  .well-known/matrix/   Matrix keşif dosyaları (dokunma)
-check.mjs               content.json doğrulaması:  node check.mjs
-wrangler.jsonc          Cloudflare yapılandırması
+  index.html            small page skeleton
+  content.json          ← ALL content lives here (services, about text, menu, footer)
+  assets/app.js         code that renders content.json
+  assets/app.css        Nord theme (colors and radii are tokens in :root)
+  assets/icons.js       inline SVG icons
+  sw.js                 service worker (offline shell)
+  manifest.webmanifest  PWA manifest
+  _headers              security headers, CSP, cache rules
+  .well-known/matrix/   Matrix discovery files (leave alone)
+check.mjs               content.json validation:  node check.mjs
+wrangler.jsonc          Cloudflare configuration
 ```
 
-## Yeni servis eklemek
+## Adding a service
 
-`public/content.json` → `tabs` → `home` sekmesindeki ilgili grubun `items` listesine bir satır ekle:
+In `public/content.json`, add an entry to the `items` list of the right group in the `home` tab:
 
 ```json
-{ "name": "Wiki", "subtitle": "Kişisel notlar", "icon": "link", "url": "https://wiki.misantropic.net" }
+{ "name": "Wiki", "subtitle": "Personal notes", "icon": "link", "url": "https://wiki.misantropic.net" }
 ```
 
-- `url`: `https://…`, `/yol` (aynı site) veya `#about` (iç sayfa) olabilir.
-- `icon`: `public/assets/icons.js` içindeki bir ad (aşağıya bak).
-- Yeni grup (sütun) için sekmenin `groups` listesine `{ "name": "…", "icon": "…", "items": [ … ] }` ekle.
-  Sütunların vurgu renkleri sırayla mavi → mor → yeşil olarak döner.
-- Matrix durum noktası isteyen bir kart için öğeye `"matrix": "https://matrix.misantropic.net"` ekle.
-  `subtitle` boşsa kartta sunucu sürümü ("Version x.y.z") gösterilir.
+- `url`: `https://…`, `/path` (same site) or `#about` (internal page).
+- `icon`: a name from `public/assets/icons.js` (see below).
+- For a new group (column), add `{ "name": "…", "icon": "…", "accent": "frost", "items": [ … ] }` to the tab's `groups` list.
+- `accent` is optional: `frost` (ice blue), `purple` or `green`. Without it, columns cycle blue → purple → green by position.
+  Setting it explicitly keeps a group's color when columns are added or reordered.
+- For a Matrix status dot on a card, add `"matrix": "https://matrix.misantropic.net"` to the item.
+  If `subtitle` is empty, the card shows the server version ("Version x.y.z").
 
-Sonra `node check.mjs` ile kontrol et (ikon adı ve url hatalarını yakalar).
+Then run `node check.mjs` (it catches bad icon names, URLs and accents).
 
-## Yeni sekme eklemek
+## Adding a tab
 
-Sekmeler her zaman görünür ve `tabs` listesindeki sıraya göre dizilir (ilk sekme ana sayfadır). Listeye bir nesne eklemek yeter;
-adres `#id` olur. Bir sekme ya `groups` (servis kartları) ya da `article` (metin sayfası) içerir:
+Tabs are always visible and follow the order of the `tabs` list (the first tab is the home page). Add an object to the list;
+its address becomes `#id`. A tab has either `groups` (service cards) or `article` (a text page):
 
 ```json
 {
@@ -48,51 +49,60 @@ adres `#id` olur. Bir sekme ya `groups` (servis kartları) ya da `article` (meti
   "article": {
     "title": "Notes",
     "icon": "paste",
-    "paragraphs": ["İlk paragraf. **Kalın**, `kod`, [bağlantı](https://example.com)."]
+    "paragraphs": ["First paragraph. **Bold**, `code`, [link](https://example.com)."]
   }
 }
 ```
 
-Çok sekme olursa mobilde sekme çubuğu yatay kaydırılır. `node check.mjs` id tekrarını ve eksik ikonları yakalar.
+With many tabs, the tab bar scrolls horizontally on mobile. `node check.mjs` catches duplicate ids and missing icons.
 
-## Hakkında / alt bilgi metni
+## About / footer text
 
-`content.json` → `about` sekmesinin `article` alanı ve `footer`. Metinlerde küçük bir işaretleme kullanılır:
+The `article` field of the `about` tab in `content.json`, and `footer`. Text supports a small markup:
 
-| Yazım            | Sonuç                |
+| Written          | Result               |
 |------------------|----------------------|
-| `**kalın**`      | **kalın**            |
-| `*italik*`       | *italik*             |
-| `` `kod` ``      | kod kutusu           |
-| `[metin](url)`   | bağlantı             |
-| `:heart:`        | ikon (icons.js adı)  |
+| `**bold**`       | **bold**             |
+| `*italic*`       | *italic*             |
+| `` `code` ``     | code box             |
+| `[text](url)`    | link                 |
+| `:heart:`        | icon (icons.js name) |
 
-- `article.intro`: üstteki "sözlük tanımı" kutusu (ilk `*…*` telaffuz rozeti olur).
-- `article.paragraphs`: düz paragraflar.
-- `article.contact`: ikonlu iletişim satırları.
+- `article.intro`: the "dictionary definition" box at the top (the first `*…*` becomes the pronunciation badge).
+- `article.paragraphs`: plain paragraphs.
+- `article.contact`: contact lines with icons.
 
-## Yeni ikon eklemek
+## Theme
 
-İkonlar Font Awesome Free (CC BY 4.0) SVG'leridir; yalnızca kullanılanlar `icons.js` içindedir.
-fontawesome.com'da ikonu aç → **Copy SVG** → `viewBox` değerinden genişlik/yüksekliği ve `d="…"` yolunu al:
+Colors, shadows, radii and the monospace stack are tokens at the top of `public/assets/app.css`.
+
+- Palette: Nord. The header color `--head` is `--blue` mixed 75/25 with `--nord0` (about 4.5:1 with white text).
+  Keep it in sync with `theme-color` in `index.html` and `manifest.webmanifest`.
+- Hover has two rules: text links turn yellow; surfaces (cards, tabs) get a frost border or a light tint.
+- Corner radii: `--r-s` (6px) for inline pieces, `--r-l` (12px) for surfaces.
+
+## Adding an icon
+
+Icons are Font Awesome Free (CC BY 4.0) SVGs; only the ones in use are included in `icons.js`.
+Open the icon on fontawesome.com → **Copy SVG** → take the width/height from the `viewBox` and the path from `d="…"`:
 
 ```js
-"ikon-adi": [genişlik, yükseklik, "path verisi"],
+"icon-name": [width, height, "path data"],
 ```
 
-Bilinmeyen bir ad yazılırsa `link` ikonu görünür; `node check.mjs` ise uyarır.
+An unknown name renders the `link` icon; `node check.mjs` warns about it.
 
-## Yayınlama
+## Deploying
 
 ```
 npx wrangler deploy
 ```
 
-## PWA / önbellek
+## PWA / caching
 
-- Service worker kabuğu (HTML, JS, CSS, yazı tipi, `content.json`, ikonlar) önce önbellekten verir,
-  arkada yeniler (stale-while-revalidate). Yani içerik değişikliği, siteyi **bir sonraki açışta** görünür.
-- Asla önbelleğe alınmayanlar: `/flap*`, `/.well-known/*`, başka origin'ler (Matrix durum isteği).
-- `public/` altına yeni bir kabuk dosyası eklersen `sw.js` içindeki `SHELL` listesine de ekle; önbelleği
-  tamamen sıfırlamak için `CACHE` sürümünü artır.
-- Manifest `scope: "/"` olduğu için PWA olarak kurulduğunda `/flap` de uygulama penceresinde açılır.
+- The service worker serves the shell (HTML, JS, CSS, font, `content.json`, icons) from the cache first
+  and refreshes it in the background (stale-while-revalidate). A content change therefore shows up on the **next visit**.
+- Never cached: `/flap*`, `/.well-known/*`, other origins (the Matrix status request).
+- If you add a new shell file under `public/`, also add it to `SHELL` in `sw.js`; bump the `CACHE` version
+  to reset the cache completely.
+- The manifest has `scope: "/"`, so when the site is installed as a PWA, `/flap` also opens inside the app window.

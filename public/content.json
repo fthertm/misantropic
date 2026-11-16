@@ -11,6 +11,7 @@
         {
           "name": "Tools",
           "icon": "screwdriver-wrench",
+          "accent": "frost",
           "items": [
             {
               "name": "binthere",
@@ -35,6 +36,7 @@
         {
           "name": "Matrix",
           "icon": "matrix",
+          "accent": "purple",
           "items": [
             {
               "name": "Homeserver",
@@ -60,6 +62,7 @@
         {
           "name": "Play",
           "icon": "gamepad",
+          "accent": "green",
           "items": [
             {
               "name": "UNO",
