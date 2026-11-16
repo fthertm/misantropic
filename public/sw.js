@@ -2,14 +2,15 @@
 //
 // Shell files are served from the cache first (instant load, works offline) and refreshed from
 // the network in the background; a new version shows up on the next visit.
-// NOT cached: /flap (separate worker), /.well-known/*, other origins (the Matrix status request).
+// NOT cached: /.well-known/*, other origins (the Matrix status request).
 //
 // If you add or remove shell files, or want to reset the cache, bump the version in CACHE.
 
-const CACHE = "misantropic-v1";
+const CACHE = "misantropic-v2";
 
 const SHELL = [
   "/",
+  "/flap",
   "/assets/app.js",
   "/assets/app.css",
   "/assets/icons.js",
@@ -42,7 +43,7 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-const BYPASS = [/^\/flap(\/|$)/, /^\/\.well-known\//, /^\/sw\.js$/];
+const BYPASS = [/^\/\.well-known\//, /^\/sw\.js$/];
 
 self.addEventListener("fetch", (event) => {
   const req = event.request;
@@ -52,11 +53,16 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) return; // Matrix etc. go straight to the network
   if (BYPASS.some((re) => re.test(url.pathname))) return; // straight to the network
 
-  // Page navigations: only the home page shell comes from the cache; other paths (404 etc.) hit the network.
+  // Page navigations: only the home page shell and /flap come from the cache; other paths (404 etc.) hit the network.
   let key = req;
   if (req.mode === "navigate") {
-    if (url.pathname !== "/" && url.pathname !== "/index.html") return;
-    key = "/";
+    if (url.pathname === "/" || url.pathname === "/index.html") {
+      key = "/";
+    } else if (url.pathname === "/flap") {
+      key = "/flap";
+    } else {
+      return;
+    }
   }
 
   event.respondWith(staleWhileRevalidate(event, key, req));
@@ -66,7 +72,7 @@ async function staleWhileRevalidate(event, key, req) {
   const cache = await caches.open(CACHE);
   const cached = await cache.match(key, { ignoreSearch: true });
 
-  const refresh = fetch(req.mode === "navigate" ? "/" : req, { cache: "no-cache" })
+  const refresh = fetch(req.mode === "navigate" ? key : req, { cache: "no-cache" })
     .then((res) => {
       if (res.ok && res.type === "basic") cache.put(key, res.clone());
       return res;
