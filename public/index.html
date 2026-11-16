@@ -2,19 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+    <meta name="description" content="A quiet corner of the internet.">
+    <meta name="theme-color" content="#526e96">
+    <meta name="color-scheme" content="dark">
+    <title>misantropic</title>
     <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="assets/icons/favicon.ico" sizes="48x48">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" sizes="180x180">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-    <meta name="description" content="A quiet corner of the internet.">
-    <meta name="theme-color" content="#2e3440">
-    <meta name="color-scheme" content="dark">
-    <title>misantropic</title>
-    <script type="module" crossorigin src="./resources/index-C32yDzkE.js"></script>
-    <link rel="stylesheet" crossorigin href="./resources/index-CyPCBeHl.css">
-    <link rel="stylesheet" href="assets/custom.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preload" href="assets/fonts/noto-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="content.json" as="fetch" crossorigin>
+    <link rel="modulepreload" href="assets/app.js">
+    <link rel="stylesheet" href="assets/app.css">
+    <script type="module" src="assets/app.js"></script>
   </head>
   <body>
-    <div id="app-mount"></div>
+    <header class="top">
+      <div class="wrap head">
+        <a class="brand" id="brand" href="#"></a>
+        <nav class="tabs" id="tabs" aria-label="Pages"></nav>
+      </div>
+    </header>
+    <main id="main" class="wrap"></main>
+    <footer id="footer"><p></p></footer>
+    <noscript><p style="padding:1rem;color:#eceff4">This page needs JavaScript.</p></noscript>
   </body>
 </html>
