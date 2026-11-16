@@ -6,7 +6,7 @@
 //
 // If you add or remove shell files, or want to reset the cache, bump the version in CACHE.
 
-const CACHE = "misantropic-v3";
+const CACHE = "misantropic-v1";
 
 const SHELL = [
   "/",
