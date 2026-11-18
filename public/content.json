@@ -46,6 +46,12 @@
               "matrix": "https://matrix.misantropic.net"
             },
             {
+              "name": "Artemis",
+              "subtitle": "Matrix client with neat cosmetics features",
+              "icon": "moon",
+              "url": "https://artemis.misantropic.net"
+            },
+            {
               "name": "Element",
               "subtitle": "The classic Matrix client",
               "icon": "comments",
